@@ -20,3 +20,4 @@ setInterval(() => {
   clicks += rps / 100
   document.querySelector("#clickView").innerText = Math.round(clicks * 100) / 100
 }, 10)
+

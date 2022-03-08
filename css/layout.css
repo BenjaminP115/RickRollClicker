@@ -3,3 +3,11 @@
   padding: 0px;
   box-sizing: border-box;
 }
+#playArea #world {
+  width: 20%;
+  height: 20%;
+  background-color: #0d2d97;
+}
+#upgrades button {
+  padding: 10px;
+}
