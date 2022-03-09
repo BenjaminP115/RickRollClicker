@@ -3,11 +3,45 @@
   padding: 0px;
   box-sizing: border-box;
 }
-#playArea #world {
-  width: 20%;
-  height: 20%;
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#world {
+  max-height: 20%;
+  max-width: 20%;
   background-color: #0d2d97;
 }
+
+#left {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: blueviolet;
+}
+
+#middle {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+
+#upgrades {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+}
+
 #upgrades button {
   padding: 10px;
+}
+
+#rickBtn {
+  transition: width 0.05s;
+  transition: height 0.05s;
+  position: absolute;
+  bottom: 0px;
 }
