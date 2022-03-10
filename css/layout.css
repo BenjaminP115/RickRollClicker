@@ -11,8 +11,10 @@ body {
 }
 
 #world {
-  max-height: 20%;
+  max-height: 35%;
   max-width: 20%;
+  position: absolute;
+  top: 30%;
   background-color: #0d2d97;
 }
 
@@ -20,7 +22,8 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: blueviolet;
+  background-color: #0d2d97;
+  border-right: brown 10px solid;
 }
 
 #middle {
@@ -29,14 +32,36 @@ body {
   justify-content: center;
 }
 
+#middle h1 {
+  margin-top: 30px;
+  font-size: 70px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 #upgrades {
   background-color: beige;
   display: flex;
   flex-direction: column;
+  border-left: brown 10px solid;
 }
-
+#upgrades button:first-child {
+  margin-top: 300px;
+}
 #upgrades button {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-size: 20px;
   padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-bottom: black 5px solid;
+}
+#upgrades button:hover {
+  background-color:#757575;
+  color: white;
+}
+#upgrades button:active {
+  background-color: black;
 }
 
 #rickBtn {
