@@ -23,6 +23,8 @@ document.querySelector("body").addEventListener("keyup", () => {
 upgrades.forEach(upgrade => {
   upgrade.addEventListener("click", () => {
     let index = upgrades.indexOf(upgrade, 0)
+
+
     upgradeAmount[index] += buyAmount
     document.querySelector("#upgradeDisplay" + index).innerText = upgradeAmount[index]
     rps += upgradeAmount[index] * upgradeValues[index]
