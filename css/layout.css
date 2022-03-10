@@ -4,14 +4,19 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
 }
 
 #world {
-  max-height: 35%;
+  max-height: 40%;
   max-width: 20%;
   position: absolute;
   top: 30%;
@@ -34,8 +39,7 @@ body {
 
 #middle h1 {
   margin-top: 30px;
-  font-size: 70px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 7rem;
 }
 
 #upgrades {
@@ -48,8 +52,7 @@ body {
   margin-top: 300px;
 }
 #upgrades button {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-  font-size: 20px;
+  font-size: 2rem;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
