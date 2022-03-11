@@ -19,26 +19,35 @@ document.querySelector("body").addEventListener("keydown", event => {
     buyAmount = 100
   else if (event.key == "Shift")
     buyAmount = 10
+
+  upgrades.forEach(upgrade => {
+    let index = upgrades.indexOf(upgrade, 0)
+    let cost1 = upgradeAmount[index] * 0.1 * baseCost[index] + baseCost[index]
+    let cost = cost1 * Math.pow(1.1, buyAmount - 1)
+    upgradeCost[index].innerText = "Cost: " + Math.round(cost) + " rick rolls"
+  })
 })
 
 document.querySelector("body").addEventListener("keyup", () => {
   buyAmount = 1
+  
+  upgrades.forEach(upgrade => {
+    let index = upgrades.indexOf(upgrade, 0)
+    upgradeCost[index].innerText = "Cost: " + Math.round(upgradeAmount[index] * 0.1 * baseCost[index] + baseCost[index]) + " rick rolls"
+  })
 })
 
 upgrades.forEach(upgrade => {
   upgrade.addEventListener("click", () => {
     let index = upgrades.indexOf(upgrade, 0)
-    let cost = upgradeAmount[index] * 0.1 * baseCost[index] + baseCost[index]
+    let cost1 = upgradeAmount[index] * 0.1 * baseCost[index] + baseCost[index]
+    let cost = cost1 * Math.pow(1.1, buyAmount - 1)
 
-    console.log(buyAmount)
-    console.log(cost * Math.pow(0.1, cost))
-
-    if (clicks >= buyAmount * 0.1 * cost + cost) {
+    if (clicks >= cost) {
       upgradeAmount[index] += buyAmount
       document.querySelector("#upgradeDisplay" + index).innerText = upgradeAmount[index]
       rps += upgradeAmount[index] * upgradeValues[index]
-      upgradeCost[index].innerText = "Cost: " + Math.round(cost) + " rick rolls"
-      clicks -= cost * buyAmount
+      clicks -= cost
     }
   })
 })
