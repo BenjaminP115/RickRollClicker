@@ -58,7 +58,7 @@ rickBtn.addEventListener("click", () => {
   rickBtn.style.width = "200px"
   rickBtn.style.height = "241px"
   
-  document.querySelector("#clickView").innerText = clicks
+  document.querySelector("#clickView").innerText = Math.round(clicks)
 
   setTimeout(() => {
     rickBtn.style.width = "220px"
@@ -68,5 +68,5 @@ rickBtn.addEventListener("click", () => {
 
 setInterval(() => {
   clicks += rps / 10
-  document.querySelector("#clickView").innerText = Math.round(clicks * 10) / 10
+  document.querySelector("#clickView").innerText = Math.round(Math.round(clicks * 10) / 10)
 }, 100)
