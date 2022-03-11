@@ -48,7 +48,7 @@ body {
   flex-direction: column;
   border-left: brown 10px solid;
 }
-#upgrades button:first-child {
+#upgrades .upgrade:first-child {
   margin-top: 300px;
 }
 #upgrades button {
@@ -60,6 +60,13 @@ body {
   border-bottom: black 5px solid;
   width: 100%;
 }
+
+#upgrades .upgrade p {
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+}
+
 #upgrades button:hover {
   background-color:#757575;
   color: white;
