@@ -10,6 +10,24 @@ let buyAmount = 1;
 let clicks = 0
 let rps = 0
 
+console.log(localStorage.getItem("upgrades"))
+
+let a = Array.from(localStorage.getItem("upgrades").split(","))
+
+for (let i = 0; i < a.length; i++) {
+  upgradeAmount[i] = parseInt(a[i])
+  document.querySelector("#upgradeDisplay" + i).innerText = upgradeAmount[i]
+}
+
+for(let i = 0; i < upgradeAmount.length; i++) {
+  rps += upgradeValues[i] * upgradeAmount[i]
+}
+
+console.log(a)
+console.log(upgradeAmount)
+clicks = parseInt(localStorage.getItem("clicks"))
+
+
 upgradeCost.forEach(upgrade => {
   upgrade.innerText = "Cost: " + baseCost[upgradeCost.indexOf(upgrade, 0)] + " rick rolls"
 })
@@ -48,6 +66,7 @@ upgrades.forEach(upgrade => {
       document.querySelector("#upgradeDisplay" + index).innerText = upgradeAmount[index]
       rps += upgradeAmount[index] * upgradeValues[index]
       clicks -= cost
+      localStorage.setItem("upgrades", upgradeAmount)
     }
   })
 })
@@ -68,5 +87,6 @@ rickBtn.addEventListener("click", () => {
 
 setInterval(() => {
   clicks += rps / 10
-  document.querySelector("#clickView").innerText = Math.round(Math.round(clicks * 10) / 10)
+  document.querySelector("#clickView").innerText = Math.round(clicks)
+  localStorage.setItem("clicks", clicks);
 }, 100)
