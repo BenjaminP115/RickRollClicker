@@ -42,7 +42,7 @@ document.querySelector("body").addEventListener("keydown", event => {
     let index = upgrades.indexOf(upgrade, 0)
     let cost1 = upgradeAmount[index] * 0.1 * baseCost[index] + baseCost[index]
     let cost = cost1 * Math.pow(1.1, buyAmount - 1)
-    upgradeCost[index].innerText = "Cost: " + Math.round(cost) + " rick rolls"
+    upgradeCost[index].innerText = buyAmount + " Cost: " + Math.round(cost) + " rick rolls"
   })
 })
 
